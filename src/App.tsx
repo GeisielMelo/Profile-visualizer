@@ -1,9 +1,9 @@
-import Home from './pages/Home.tsx'
-import './styles/Index.css'
+import AppRoutes from './AppRoutes.tsx'
+import './styles/Home.css'
 function App() {
 
   return (
-    <Home/>
+    <AppRoutes/>
   )
 }
 
