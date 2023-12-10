@@ -1,10 +1,13 @@
-import AppRoutes from './AppRoutes.tsx'
-import './styles/Home.css'
-function App() {
+import AppRoutes from "./AppRoutes.tsx";
+import { GlobalStyles } from "./styles/GlobalStyles.tsx";
 
+const App = () => {
   return (
-    <AppRoutes/>
-  )
-}
+    <>
+      <GlobalStyles />
+      <AppRoutes />
+    </>
+  );
+};
 
-export default App
+export default App;
