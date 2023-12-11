@@ -77,6 +77,7 @@ export const StyledProfile = styled.div`
 
   .profile-social {
     display: flex;
+    flex-wrap: wrap;
     margin: 20px 0;
     width: 100%;
 
