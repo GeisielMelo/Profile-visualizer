@@ -1,7 +1,7 @@
-import { UserData } from "../../types/index";
-import { StyledSection, StyledProfile } from "../styles/StyledUser";
-import { TimeFormatter } from "../utils/TimeFormatter";
-import { UrlFormatter } from "../utils/UrlFormatter";
+import { UserData } from "../../../types/index";
+import { StyledSection, StyledProfile } from "../../styles/StyledUser";
+import { TimeFormatter } from "../../utils/TimeFormatter";
+import { UrlFormatter } from "../../utils/UrlFormatter";
 
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
@@ -13,7 +13,7 @@ interface Data {
   data: UserData | null;
 }
 
-const User: React.FC<Data> = ({ data })=> {
+const User: React.FC<Data> = ({ data }) => {
   return (
     <StyledSection>
       <StyledProfile>
