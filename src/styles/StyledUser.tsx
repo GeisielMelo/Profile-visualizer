@@ -5,6 +5,8 @@ export const StyledSection = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 100vh;
+  height: 100dvh;
 `;
 
 export const StyledProfile = styled.div`
@@ -12,8 +14,6 @@ export const StyledProfile = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  
-  margin-top: 50px;
 
   max-width: 500px;
   width: 100%;
@@ -21,11 +21,17 @@ export const StyledProfile = styled.div`
   ul {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     list-style: none;
     margin: 0;
     padding: 0;
     li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       padding: 10px;
+      color: rgb(200, 225, 255);
+      gap: 5px;
     }
   }
 
@@ -56,6 +62,19 @@ export const StyledProfile = styled.div`
     color: rgb(0, 112, 243);
   }
 
+  .profile-github:first-letter {
+    text-transform: uppercase;
+  }
+
+  .profile-bio {
+    text-align: center;
+    padding: 10px;
+    color: rgb(200, 225, 255);
+    word-wrap: break-word;
+    max-width: 500px;
+    width: 100%;
+  }
+
   .profile-social {
     display: flex;
     margin: 20px 0;
@@ -75,6 +94,10 @@ export const StyledProfile = styled.div`
     }
     h1 {
       margin-bottom: 10px;
+      color: rgb(246, 248, 250);
+    }
+    p {
+      color: rgb(200, 225, 255);
     }
   }
 `;
