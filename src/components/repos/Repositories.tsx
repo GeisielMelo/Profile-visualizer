@@ -14,7 +14,7 @@ type Data = {
   language: string;
   html_url: string;
   stargazers_count: number;
-}
+};
 
 const Repositories: React.FC = () => {
   const navigate = useNavigate();
