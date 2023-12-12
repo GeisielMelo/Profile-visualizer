@@ -1,21 +1,13 @@
 import styled from "styled-components";
 
-export const StyledUserSkeleton = styled.section`
+export const StyledUserSkeleton = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-
-  .skeleton-profile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    max-width: 500px;
-    width: 100%;
-    padding: 5px;
-  }
+  max-width: 500px;
+  width: 100%;
+  padding: 5px;
 
   .skeleton-image {
     max-width: 150px;

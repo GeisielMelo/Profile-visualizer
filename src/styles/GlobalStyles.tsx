@@ -18,6 +18,12 @@ export const GlobalStyles = createGlobalStyle`
     background-color: rgb(26, 30, 34);
   }
 
+  button {
+    &:hover{
+      cursor: pointer;
+    }
+  }
+
   @keyframes gradientAnimation {
     0% {
       background-position: 0% 50%;

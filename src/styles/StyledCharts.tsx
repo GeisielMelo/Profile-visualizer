@@ -10,6 +10,13 @@ export const StyledSection = styled.section`
   h1 {
     text-align: center;
     margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-family: "Noto Sans", sans-serif;
   }
 
   .charts {
