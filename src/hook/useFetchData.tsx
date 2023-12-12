@@ -1,33 +1,45 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react";
+
+type FetchDataError = {
+  status: number;
+  message?: string;
+};
 
 type FetchDataReturnType<T> = {
-  data: T | null
-  loading: boolean
-  error: string | null
-}
+  data: T | null;
+  loading: boolean;
+  error: FetchDataError | null;
+};
 
 export function useFetchData<T>(url: string): FetchDataReturnType<T> {
-  const [data, setData] = useState<T | null>(null)
-  const [loading, setLoading] = useState<boolean>(true)
-  const [error, setError] = useState<string | null>(null)
+  const [data, setData] = useState<T | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<FetchDataError | null>(null);
 
   useEffect(() => {
     const fetchData = async (): Promise<void> => {
       try {
-        const response = await fetch(url)
-        if (response.status === 404) throw new Error
-        if (response.status === 403) throw new Error
-        const jsonData = await response.json()
-        setData(jsonData)
-      } catch (e) {
-        setError('Error fetching data')
+        const response = await fetch(url);
+
+        if (response.status === 404) {
+          throw { status: response.status, message: "Not Found" };
+        }
+
+        if (response.status === 403) {
+          throw { status: response.status, message: "Forbidden" };
+        }
+
+        const jsonData = await response.json();
+        setData(jsonData);
+      } catch (error) {
+        setError(error as FetchDataError);
       } finally {
-        setLoading(false)
+        setLoading(false);
       }
-    }
+    };
 
-    fetchData()
-  }, [url])
+    fetchData();
+  }, [url]);
 
-  return { data, loading, error }
+  return { data, loading, error };
 }
