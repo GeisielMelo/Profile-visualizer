@@ -1,27 +1,33 @@
-import { useEffect, useState } from "react";
-import { UserData, GitHubApiError } from "../../types/index.ts";
+import { useState, useEffect } from 'react'
 
-export const useFetchData = (user: string | undefined) => {
-  const [data, setData] = useState<UserData | null>(null);
-  const [error, setError] = useState<GitHubApiError | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
+type FetchDataReturnType<T> = {
+  data: T | null
+  loading: boolean
+  error: string | null
+}
+
+export function useFetchData<T>(url: string): FetchDataReturnType<T> {
+  const [data, setData] = useState<T | null>(null)
+  const [loading, setLoading] = useState<boolean>(true)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchData = async (): Promise<void> => {
       try {
-        const response = await fetch(`https://api.github.com/users/${user}`);
-        if (response.status == 404) throw new Error();
-        if (response.ok) setData(await response.json());
-      } catch (error) {
-        setError({ message: "Erro desconhecido" });
+        const response = await fetch(url)
+        if (response.status === 404) throw new Error
+        if (response.status === 403) throw new Error
+        const jsonData = await response.json()
+        setData(jsonData)
+      } catch (e) {
+        setError('Error fetching data')
       } finally {
-        setLoading(false);
+        setLoading(false)
       }
-    };
-    fetchData();
-  }, [user]);
+    }
 
-  return { data, error, loading };
-};
+    fetchData()
+  }, [url])
 
-export default useFetchData;
+  return { data, loading, error }
+}
