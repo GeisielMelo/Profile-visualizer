@@ -10,7 +10,7 @@ import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
-import BusinessIcon from '@mui/icons-material/Business';
+import BusinessIcon from "@mui/icons-material/Business";
 
 type UserData = {
   login: string;
@@ -30,15 +30,18 @@ type UserData = {
   followers: number;
   following: number;
   created_at: string;
-}
+};
 
 const User: React.FC = () => {
   const navigate = useNavigate();
   const params = useParams();
-  const url = `https://api.github.com/users/${params.user}`;
+  const url: string = `https://api.github.com/users/${params.user}`;
   const { data, error, loading } = useFetchData<UserData>(url);
 
-  if (error) navigate("/");
+  if (error) {
+    if (error.status === 404) navigate("/404");
+    if (error.status === 403) navigate("/403");
+  }
 
   return (
     <StyledSection>

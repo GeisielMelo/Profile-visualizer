@@ -1,9 +1,8 @@
-// UserSkeleton.tsx
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { StyledUserSkeleton } from "../../styles/StyledUserSkeleton";
 
-const UserSkeleton = () => {
+const UserSkeleton: React.FC = () => {
   return (
     <StyledUserSkeleton>
       <div className="skeleton-image">
