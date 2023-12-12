@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { StyledSection } from '../styles/StyledHome'
 
-const Home = () => {
+const Home: React.FC = () => {
   const navigate = useNavigate();
-  const [user, setUser] = useState("");
+  const [user, setUser] = useState<string>("");
 
   const handleSubmit = () => {
     navigate(`/${user}`);
@@ -16,7 +17,7 @@ const Home = () => {
   };
 
   return (
-    <section>
+    <StyledSection>
       <input
         type="text"
         value={user}
@@ -24,7 +25,7 @@ const Home = () => {
         onKeyDown={handleKeyDown}
       />
       <button onClick={() => handleSubmit()}></button>
-    </section>
+    </StyledSection>
   );
 };
 
