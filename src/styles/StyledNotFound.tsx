@@ -17,7 +17,7 @@ export const StyledSection = styled.section`
     padding: 2rem;
 
     img {
-      max-width: clamp(120px, 16vw, 200px);
+      max-width: clamp(100px, 10vw, 200px);
     }
     h1 {
       display: block;

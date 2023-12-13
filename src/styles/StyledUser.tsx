@@ -69,6 +69,7 @@ export const StyledProfile = styled.div`
   }
 
   .profile-github {
+    font-family: "Inter", sans-serif;
     color: rgb(0, 112, 243);
   }
 
