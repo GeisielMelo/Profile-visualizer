@@ -1,6 +1,8 @@
 import User from "../components/user/User";
 import Charts from "../components/charts/Charts";
 import Repositories from "../components/repos/Repositories";
+import Footer from "../components/footer/Footer";
+import ButtonBackToTop from "../components/buttons/BackToTop";
 
 const Profile: React.FC = () => {
   return (
@@ -8,6 +10,8 @@ const Profile: React.FC = () => {
       <User />
       <Charts />
       <Repositories />
+      <Footer/>
+      <ButtonBackToTop/>
     </>
   );
 };
