@@ -13,7 +13,7 @@ export const StyledSection = styled.section`
   }
 
   .card-btn {
-    margin-top: 10px;
+    margin: 20px;
     padding: 10px 20px;
     box-shadow: rgba(2, 12, 27, 0.7) 0px 1px 5px;
     border-radius: 0.5em;
