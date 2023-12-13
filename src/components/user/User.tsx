@@ -12,7 +12,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import BusinessIcon from "@mui/icons-material/Business";
 
-type UserData = {
+type Data = {
   login: string;
   avatar_url: string;
   html_url: string;
@@ -36,7 +36,7 @@ const User: React.FC = () => {
   const navigate = useNavigate();
   const params = useParams();
   const url: string = `https://api.github.com/users/${params.user}`;
-  const { data, error, loading } = useFetchData<UserData>(url);
+  const { data, error, loading } = useFetchData<Data>(url);
 
   if (error) {
     if (error.status === 404) navigate("/404");

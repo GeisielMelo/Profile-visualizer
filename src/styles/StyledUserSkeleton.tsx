@@ -19,5 +19,6 @@ export const StyledUserSkeleton = styled.div`
 
   .skeleton-info {
     width: 100%;
+    margin: 10px 0;
   }
 `;

@@ -20,51 +20,46 @@ export const StyledSection = styled.section`
   }
 
   .charts {
-    max-width: 800px;
-    width: 100%;
-    padding: 20px;
-  }
-
-  .circular-charts {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-
-    div {
-      padding: 10px;
-      margin: 10px;
-      max-width: 340px;
-      width: 100%;
-      background-color: #fff;
-      border-radius: 0.5em;
-      box-shadow: hsla(0, 0%, 0%, 0.2) 0px 0px 4px 2px;
-
-      @media (max-width: 768px) {
-        max-width: 420px;
-        margin: 10px 0;
-      }
-    }
-  }
-
-  .rectangular-charts {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
 
-    div {
-      padding: 10px;
-      margin: 10px 0;
+    .top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
       max-width: 700px;
       width: 100%;
-      background-color: #fff;
-      border-radius: 0.5em;
-      box-shadow: hsla(0, 0%, 0%, 0.2) 0px 0px 4px 2px;
+      gap: 20px;
 
-      @media (max-width: 768px) {
-        max-width: 420px;
+      .small {
+        padding: 20px;
+        max-width: 340px;
+        width: 100%;
+
+        background-color: #fff;
+        border-radius: 0.5em;
+        box-shadow: hsla(0, 0%, 0%, 0.2) 0px 0px 4px 2px;
+        @media (max-width: 739px) {
+          max-width: 100%;
+        }
       }
     }
+  }
+
+  .large {
+    margin: 20px 0;
+    max-width: 700px;
+    width: 100%;
+    padding: 10px;
+
+    background-color: #fff;
+    border-radius: 0.5em;
+    box-shadow: hsla(0, 0%, 0%, 0.2) 0px 0px 4px 2px;
   }
 `;

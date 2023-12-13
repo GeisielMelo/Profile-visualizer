@@ -30,6 +30,7 @@ export const Container = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   max-width: 1300px;
+  width: 100%;
 
   h1 {
     font-size: 20px;

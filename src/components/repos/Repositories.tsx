@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useFetchData } from "../../hook/useFetchData";
 import { StyledSection, Container } from "../../styles/StyledRepositories";
+import RepositoriesSkeleton from "./RepositoriesSkeleton";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LaunchIcon from "@mui/icons-material/Launch";
 import StarIcon from "@mui/icons-material/Star";
@@ -33,7 +34,7 @@ const Repositories: React.FC = () => {
   return (
     <StyledSection>
       {loading ? (
-        <p>Loading...</p>
+        <RepositoriesSkeleton />
       ) : (
         <Container>
           {data.slice(0, maxCards).map(
@@ -70,14 +71,21 @@ const Repositories: React.FC = () => {
           )}
         </Container>
       )}
-      {maxCards < data.length ? (
-        <button className="card-btn" onClick={() => setMaxCards(maxCards + 3)}>
-          See More
-        </button>
-      ) : (
-        <button className="card-btn" onClick={() => setMaxCards(6)}>
-          Show Less
-        </button>
+      {!loading && (
+        <>
+          {maxCards < data.length ? (
+            <button
+              className="card-btn"
+              onClick={() => setMaxCards(maxCards + 3)}
+            >
+              See More
+            </button>
+          ) : (
+            <button className="card-btn" onClick={() => setMaxCards(6)}>
+              Show Less
+            </button>
+          )}
+        </>
       )}
     </StyledSection>
   );

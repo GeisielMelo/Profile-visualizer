@@ -4,6 +4,7 @@ import { useFetchData } from "../../hook/useFetchData";
 import Languages from "./Languages";
 import Topics from "./Topics";
 import Starred from "./Starred";
+import ChartsSkeleton from "./ChartsSkeleton";
 
 type Data = {
   language: string;
@@ -56,35 +57,28 @@ const Charts: React.FC = () => {
 
   return (
     <StyledSection>
-      <div className="charts">
-        <div className="circular-charts">
-          {loading ? (
-            <p>loading</p>
-          ) : (
-            <>
-              <div>
-                <h1>Most Used Languages</h1>
-                <Languages data={languages} />
-              </div>
-              <div>
-                <h1>Star per Project</h1>
-                <Starred data={starred} />
-              </div>
-            </>
-          )}
-        </div>
+      {loading ? (
+        <ChartsSkeleton />
+      ) : (
+        <div className="charts">
 
-        <div className="rectangular-charts">
-          {loading ? (
-            <p>loading</p>
-          ) : (
-            <div>
-              <h1>Most Used Topic</h1>
-              <Topics data={topics} />
+          <div className="top">
+            <div className="small">
+              <h1>Most Used Languages</h1>
+              <Languages data={languages} />
             </div>
-          )}
+            <div className="small">
+              <h1>Star per Project</h1>
+              <Starred data={starred} />
+            </div>
+          </div>
+
+          <div className="large">
+            <h1>Most Used Topic</h1>
+            <Topics data={topics} />
+          </div>
         </div>
-      </div>
+      )}
     </StyledSection>
   );
 };

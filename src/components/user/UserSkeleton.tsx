@@ -9,7 +9,16 @@ const UserSkeleton: React.FC = () => {
         <Skeleton circle height={150} />
       </div>
       <div className="skeleton-info">
-        <Skeleton height={60} count={4} style={{ margin: "5px" }} />
+        <Skeleton height={60} />
+      </div>
+      <div className="skeleton-info">
+        <Skeleton height={60} />
+      </div>
+      <div className="skeleton-info">
+        <Skeleton height={60} />
+      </div>
+      <div className="skeleton-info">
+        <Skeleton height={60} />
       </div>
     </StyledUserSkeleton>
   );
