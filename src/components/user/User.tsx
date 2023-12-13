@@ -44,7 +44,7 @@ const User: React.FC = () => {
   }
 
   return (
-    <StyledSection>
+    <StyledSection id="#">
       {loading ? (
         <UserSkeleton />
       ) : (
