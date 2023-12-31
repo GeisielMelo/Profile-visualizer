@@ -31,6 +31,12 @@ const Repositories: React.FC = () => {
     return;
   }
 
+  const handleDeployUrl = (url:string) => {
+    const pattern = /^(http:\/\/|https:\/\/|ftp:\/\/)/
+    if (pattern.test(url)) return window.open(url, "_blank")
+    else return window.open('https://' + url, "_blank")
+  }
+
   return (
     <StyledSection>
       {loading ? (
@@ -46,7 +52,7 @@ const Repositories: React.FC = () => {
                     <div className="card-buttons">
                       {repo.homepage && (
                         <button
-                          onClick={() => window.open(repo.homepage, "_blank")}
+                          onClick={() => handleDeployUrl(repo.homepage)}
                         >
                           <LaunchIcon />
                         </button>
