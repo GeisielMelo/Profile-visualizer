@@ -39,7 +39,9 @@ const Forbidden: React.FC = () => {
           <div>loading</div>
         ) : (
           <div className="container">
-            <img src="/github.svg" alt="GitHub Logo" />
+            <div className="git-logo">
+              <img src="/github.svg" alt="GitHub Logo" />
+            </div>
             {handleEvalPercent() > 95 ? (
               <>
                 <h1>Ops!</h1>

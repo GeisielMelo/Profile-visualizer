@@ -8,6 +8,11 @@ export const StyledSection = styled.section`
   height: calc(100vh - 50px);
   height: calc(100dvh - 50px);
   
+  .git-logo {
+    max-width: clamp(100px, 10vw, 200px);
+    width: 100%;
+  }
+
   .container {
     display: flex;
     flex-direction: column;
@@ -17,7 +22,7 @@ export const StyledSection = styled.section`
     padding: 2rem;
 
     img {
-      max-width: clamp(100px, 10vw, 200px);
+      width: 100%;
     }
     h1 {
       display: block;

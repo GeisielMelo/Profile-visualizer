@@ -22,7 +22,9 @@ const Home: React.FC = () => {
     <>
       <StyledSection>
         <div className="search">
-          <img src="/github.svg" alt="GitHub Logo" />
+          <div className="git-logo">
+            <img src="/github.svg" alt="GitHub Logo" />
+          </div>
           <h1>Find Your Profile</h1>
           <div>
             <input
@@ -30,6 +32,7 @@ const Home: React.FC = () => {
               value={user}
               onChange={(e) => setUser(e.target.value)}
               onKeyDown={handleKeyDown}
+              placeholder='Github Username'
             />
             <button onClick={() => handleSubmit()}>
               <SearchIcon />
